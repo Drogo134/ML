@@ -1,0 +1,24 @@
+{
+  "openai_api_key": "",
+  "anthropic_api_key": "",
+  "google_api_key": "",
+  "huggingface_api_key": "",
+  "cohere_api_key": "",
+  "replicate_api_key": "",
+  "stability_api_key": "",
+  "midjourney_api_key": "",
+  "custom_api_url": "",
+  "custom_api_key": "",
+  "instructions": {
+    "openai_api_key": "Получите ключ на https://platform.openai.com/api-keys",
+    "anthropic_api_key": "Получите ключ на https://console.anthropic.com/",
+    "google_api_key": "Получите ключ на https://makersuite.google.com/app/apikey",
+    "huggingface_api_key": "Получите ключ на https://huggingface.co/settings/tokens",
+    "cohere_api_key": "Получите ключ на https://dashboard.cohere.ai/",
+    "replicate_api_key": "Получите ключ на https://replicate.com/account/api-tokens",
+    "stability_api_key": "Получите ключ на https://platform.stability.ai/",
+    "midjourney_api_key": "Получите ключ на https://midjourney.com/",
+    "custom_api_url": "URL вашего кастомного API",
+    "custom_api_key": "Ключ для вашего кастомного API"
+  }
+}

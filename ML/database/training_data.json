@@ -1,0 +1,338 @@
+{
+  "synthetic_data_generation": {
+    "human_behavior": {
+      "user_demographics": {
+        "age": {
+          "range": "18-65",
+          "distribution": "Normal with mean 35, std 12",
+          "description": "Возраст пользователей"
+        },
+        "gender": {
+          "values": ["male", "female", "other"],
+          "distribution": [0.48, 0.48, 0.04],
+          "description": "Пол пользователей"
+        },
+        "income": {
+          "range": "30000-150000",
+          "distribution": "Log-normal",
+          "description": "Годовой доход в долларах"
+        },
+        "education": {
+          "values": ["high_school", "bachelor", "master", "phd"],
+          "distribution": [0.3, 0.4, 0.25, 0.05],
+          "description": "Уровень образования"
+        },
+        "location": {
+          "values": ["city", "suburb", "rural"],
+          "distribution": [0.6, 0.3, 0.1],
+          "description": "Тип местоположения"
+        }
+      },
+      "behavioral_data": {
+        "device_type": {
+          "values": ["mobile", "desktop", "tablet"],
+          "distribution": [0.6, 0.3, 0.1],
+          "description": "Тип устройства"
+        },
+        "session_duration": {
+          "range": "1-300",
+          "distribution": "Exponential with mean 45",
+          "description": "Длительность сессии в минутах"
+        },
+        "pages_visited": {
+          "range": "1-50",
+          "distribution": "Poisson with lambda 8",
+          "description": "Количество посещенных страниц"
+        },
+        "time_on_page": {
+          "range": "5-300",
+          "distribution": "Gamma with shape 2, scale 30",
+          "description": "Время на странице в секундах"
+        },
+        "click_rate": {
+          "range": "0-1",
+          "distribution": "Beta with alpha 2, beta 5",
+          "description": "Частота кликов"
+        }
+      },
+      "psychological_constructs": {
+        "purchase_intent": {
+          "range": "0-1",
+          "distribution": "Beta with alpha 3, beta 7",
+          "description": "Намерение совершить покупку"
+        },
+        "churn_risk": {
+          "range": "0-1",
+          "distribution": "Beta with alpha 2, beta 8",
+          "description": "Риск оттока клиента"
+        },
+        "engagement_score": {
+          "range": "0-1",
+          "distribution": "Beta with alpha 4, beta 6",
+          "description": "Оценка вовлеченности"
+        },
+        "satisfaction": {
+          "range": "1-10",
+          "distribution": "Normal with mean 7, std 2",
+          "description": "Уровень удовлетворенности"
+        },
+        "loyalty": {
+          "range": "0-1",
+          "distribution": "Beta with alpha 5, beta 5",
+          "description": "Уровень лояльности"
+        }
+      },
+      "target_variables": {
+        "will_purchase": {
+          "type": "binary",
+          "description": "Совершит ли покупку (0/1)",
+          "base_rate": 0.15
+        },
+        "purchase_amount": {
+          "type": "continuous",
+          "range": "0-1000",
+          "distribution": "Gamma with shape 2, scale 50",
+          "description": "Сумма покупки в долларах"
+        },
+        "churn": {
+          "type": "binary",
+          "description": "Отток клиента (0/1)",
+          "base_rate": 0.08
+        },
+        "engagement_level": {
+          "type": "categorical",
+          "values": ["low", "medium", "high"],
+          "distribution": [0.3, 0.5, 0.2],
+          "description": "Уровень вовлеченности"
+        }
+      }
+    },
+    "molecular_data": {
+      "molecular_properties": {
+        "molecular_weight": {
+          "range": "50-1000",
+          "distribution": "Log-normal with mean 300, std 0.5",
+          "description": "Молекулярный вес в Da"
+        },
+        "logp": {
+          "range": "-2 to 6",
+          "distribution": "Normal with mean 2, std 1.5",
+          "description": "Коэффициент распределения октанол-вода"
+        },
+        "hbd": {
+          "range": "0-10",
+          "distribution": "Poisson with lambda 2",
+          "description": "Количество доноров водорода"
+        },
+        "hba": {
+          "range": "0-15",
+          "distribution": "Poisson with lambda 4",
+          "description": "Количество акцепторов водорода"
+        },
+        "tpsa": {
+          "range": "0-200",
+          "distribution": "Gamma with shape 2, scale 30",
+          "description": "Топологическая полярная поверхность"
+        },
+        "rotatable_bonds": {
+          "range": "0-20",
+          "distribution": "Poisson with lambda 5",
+          "description": "Количество вращающихся связей"
+        },
+        "aromatic_rings": {
+          "range": "0-5",
+          "distribution": "Poisson with lambda 1.5",
+          "description": "Количество ароматических колец"
+        },
+        "heavy_atoms": {
+          "range": "5-100",
+          "distribution": "Normal with mean 25, std 10",
+          "description": "Количество тяжелых атомов"
+        }
+      },
+      "target_properties": {
+        "toxicity": {
+          "type": "binary",
+          "description": "Токсичность (0/1)",
+          "base_rate": 0.3
+        },
+        "activity": {
+          "type": "continuous",
+          "range": "0-1",
+          "distribution": "Beta with alpha 2, beta 3",
+          "description": "Биологическая активность"
+        },
+        "ic50": {
+          "type": "continuous",
+          "range": "1-10000",
+          "distribution": "Log-normal with mean 1000, std 1",
+          "description": "IC50 значение в нМ"
+        },
+        "admet_score": {
+          "type": "continuous",
+          "range": "0-1",
+          "distribution": "Beta with alpha 3, beta 2",
+          "description": "Общий ADMET скор"
+        }
+      }
+    },
+    "general_ml_data": {
+      "classification": {
+        "features": {
+          "n_features": "10-50",
+          "feature_types": ["numerical", "categorical", "binary"],
+          "correlation": "0.1-0.8",
+          "noise_level": "0.05-0.2"
+        },
+        "targets": {
+          "n_classes": "2-10",
+          "class_balance": "Balanced to imbalanced",
+          "separability": "Linear to non-linear"
+        }
+      },
+      "regression": {
+        "features": {
+          "n_features": "10-50",
+          "feature_types": ["numerical", "categorical"],
+          "correlation": "0.1-0.9",
+          "noise_level": "0.05-0.3"
+        },
+        "targets": {
+          "range": "0-100",
+          "distribution": "Normal, Log-normal, Gamma",
+          "complexity": "Linear to highly non-linear"
+        }
+      },
+      "clustering": {
+        "features": {
+          "n_features": "2-20",
+          "feature_types": ["numerical"],
+          "clusters": "2-10",
+          "separability": "Well-separated to overlapping"
+        },
+        "clusters": {
+          "shapes": ["spherical", "elongated", "irregular"],
+          "sizes": "Equal to highly unequal",
+          "densities": "Uniform to varying"
+        }
+      }
+    }
+  },
+  "data_augmentation": {
+    "techniques": {
+      "smote": {
+        "description": "Synthetic Minority Oversampling Technique",
+        "usage": "Imbalanced classification",
+        "parameters": {
+          "k_neighbors": 5,
+          "sampling_strategy": "auto"
+        }
+      },
+      "adasyn": {
+        "description": "Adaptive Synthetic Sampling",
+        "usage": "Imbalanced classification with focus on difficult samples",
+        "parameters": {
+          "n_neighbors": 5,
+          "sampling_strategy": "auto"
+        }
+      },
+      "random_oversampling": {
+        "description": "Random oversampling of minority class",
+        "usage": "Simple imbalanced classification",
+        "parameters": {
+          "sampling_strategy": "auto"
+        }
+      },
+      "feature_noise": {
+        "description": "Adding noise to features",
+        "usage": "Regularization and robustness",
+        "parameters": {
+          "noise_level": 0.1,
+          "noise_type": "gaussian"
+        }
+      },
+      "feature_permutation": {
+        "description": "Permuting feature values",
+        "usage": "Data augmentation for small datasets",
+        "parameters": {
+          "permutation_ratio": 0.1
+        }
+      }
+    }
+  },
+  "data_quality": {
+    "missing_values": {
+      "handling": [
+        "Mean/median imputation",
+        "Mode imputation for categorical",
+        "Forward/backward fill",
+        "Interpolation",
+        "Model-based imputation"
+      ],
+      "thresholds": {
+        "max_missing_ratio": 0.5,
+        "drop_threshold": 0.8
+      }
+    },
+    "outliers": {
+      "detection": [
+        "IQR method",
+        "Z-score method",
+        "Isolation Forest",
+        "Local Outlier Factor"
+      ],
+      "handling": [
+        "Remove outliers",
+        "Cap outliers",
+        "Transform outliers",
+        "Keep outliers"
+      ]
+    },
+    "data_validation": {
+      "checks": [
+        "Data types",
+        "Value ranges",
+        "Missing patterns",
+        "Duplicate records",
+        "Consistency checks"
+      ]
+    }
+  },
+  "feature_engineering": {
+    "numerical_features": {
+      "scaling": [
+        "StandardScaler",
+        "MinMaxScaler",
+        "RobustScaler",
+        "PowerTransformer"
+      ],
+      "transformation": [
+        "Log transformation",
+        "Square root transformation",
+        "Box-Cox transformation",
+        "Yeo-Johnson transformation"
+      ]
+    },
+    "categorical_features": {
+      "encoding": [
+        "One-hot encoding",
+        "Label encoding",
+        "Target encoding",
+        "Frequency encoding"
+      ],
+      "handling": [
+        "High cardinality features",
+        "Rare categories",
+        "Unknown categories"
+      ]
+    },
+    "feature_selection": {
+      "methods": [
+        "Univariate selection",
+        "Recursive feature elimination",
+        "Feature importance",
+        "Correlation analysis"
+      ]
+    }
+  }
+}

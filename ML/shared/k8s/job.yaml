@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ml-projects-job
+  namespace: ml-projects
+spec:
+  template:
+    spec:
+      containers:
+      - name: ml-projects
+        image: ml-projects:latest
+        command: ["python", "run_all_projects.py"]
+        env:
+        - name: PYTHONPATH
+          value: "/app"
+        - name: ML_PROJECTS_HOME
+          value: "/app"
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
+      restartPolicy: Never
+  backoffLimit: 3

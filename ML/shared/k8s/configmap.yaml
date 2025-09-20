@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ml-projects-config
+  namespace: ml-projects
+data:
+  PYTHONPATH: "/app"
+  ML_PROJECTS_HOME: "/app"
+  LOG_LEVEL: "INFO"

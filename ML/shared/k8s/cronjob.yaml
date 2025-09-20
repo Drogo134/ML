@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: ml-projects-cronjob
+  namespace: ml-projects
+spec:
+  schedule: "0 2 * * *"  # Run daily at 2 AM
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: ml-projects
+            image: ml-projects:latest
+            command: ["python", "run_all_projects.py"]
+            env:
+            - name: PYTHONPATH
+              value: "/app"
+            - name: ML_PROJECTS_HOME
+              value: "/app"
+            resources:
+              requests:
+                memory: "1Gi"
+                cpu: "500m"
+              limits:
+                memory: "2Gi"
+                cpu: "1000m"
+          restartPolicy: OnFailure
+      backoffLimit: 3

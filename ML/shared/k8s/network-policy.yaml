@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ml-projects-network-policy
+  namespace: ml-projects
+spec:
+  podSelector:
+    matchLabels:
+      app: ml-projects
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          name: ml-projects
+    ports:
+    - protocol: TCP
+      port: 5000
+  egress:
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          name: ml-projects
+    ports:
+    - protocol: TCP
+      port: 5000

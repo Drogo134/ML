@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ml-projects
+  namespace: ml-projects
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ml-projects
+  template:
+    metadata:
+      labels:
+        app: ml-projects
+    spec:
+      containers:
+      - name: ml-projects
+        image: ml-projects:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: PYTHONPATH
+          value: "/app"
+        - name: ML_PROJECTS_HOME
+          value: "/app"
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"

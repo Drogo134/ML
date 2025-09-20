@@ -1,0 +1,257 @@
+{
+  "molecular_databases": {
+    "tox21": {
+      "name": "Tox21 Challenge",
+      "description": "Токсикологические данные для тестирования методов машинного обучения",
+      "source": "NIH",
+      "compounds": 8014,
+      "tasks": 12,
+      "task_types": "Classification",
+      "endpoints": [
+        "NR-AR",
+        "NR-AR-LBD", 
+        "NR-AhR",
+        "NR-Aromatase",
+        "NR-ER",
+        "NR-ER-LBD",
+        "NR-PPAR-gamma",
+        "SR-ARE",
+        "SR-ATAD5",
+        "SR-HSE",
+        "SR-MMP",
+        "SR-p53"
+      ],
+      "features": [
+        "SMILES strings",
+        "Molecular descriptors",
+        "Fingerprints",
+        "Graph representations"
+      ]
+    },
+    "bace": {
+      "name": "BACE Inhibitors",
+      "description": "Ингибиторы β-секретазы для лечения болезни Альцгеймера",
+      "source": "ChEMBL",
+      "compounds": 1513,
+      "tasks": 1,
+      "task_types": "Regression",
+      "endpoints": [
+        "pIC50 values"
+      ],
+      "features": [
+        "SMILES strings",
+        "Molecular descriptors",
+        "Fingerprints"
+      ]
+    },
+    "bbbp": {
+      "name": "Blood-Brain Barrier Penetration",
+      "description": "Проницаемость гематоэнцефалического барьера",
+      "source": "ChEMBL",
+      "compounds": 2039,
+      "tasks": 1,
+      "task_types": "Classification",
+      "endpoints": [
+        "Binary classification (permeable/impermeable)"
+      ],
+      "features": [
+        "SMILES strings",
+        "Molecular descriptors",
+        "Fingerprints"
+      ]
+    },
+    "clintox": {
+      "name": "Clinical Trial Toxicity",
+      "description": "Клиническая токсичность лекарственных препаратов",
+      "source": "FDA",
+      "compounds": 1491,
+      "tasks": 2,
+      "task_types": "Classification",
+      "endpoints": [
+        "CT_TOX",
+        "FDA_APPROVED"
+      ],
+      "features": [
+        "SMILES strings",
+        "Molecular descriptors",
+        "Fingerprints"
+      ]
+    }
+  },
+  "molecular_descriptors": {
+    "physicochemical": {
+      "molecular_weight": {
+        "description": "Молекулярный вес",
+        "range": "50-1000 Da",
+        "importance": "Влияет на абсорбцию и распределение"
+      },
+      "logp": {
+        "description": "Коэффициент распределения октанол-вода",
+        "range": "-2 to 6",
+        "importance": "Липофильность, проницаемость мембран"
+      },
+      "hbd": {
+        "description": "Количество доноров водорода",
+        "range": "0-10",
+        "importance": "Водородные связи, растворимость"
+      },
+      "hba": {
+        "description": "Количество акцепторов водорода",
+        "range": "0-15",
+        "importance": "Водородные связи, полярность"
+      },
+      "tpsa": {
+        "description": "Топологическая полярная поверхность",
+        "range": "0-200 Å²",
+        "importance": "Проницаемость мембран"
+      },
+      "rotatable_bonds": {
+        "description": "Количество вращающихся связей",
+        "range": "0-20",
+        "importance": "Гибкость молекулы"
+      },
+      "aromatic_rings": {
+        "description": "Количество ароматических колец",
+        "range": "0-5",
+        "importance": "Стабильность, взаимодействия"
+      },
+      "heavy_atoms": {
+        "description": "Количество тяжелых атомов",
+        "range": "5-100",
+        "importance": "Размер молекулы"
+      }
+    },
+    "topological": {
+      "wiener_index": "Индекс Винера",
+      "balaban_index": "Индекс Балабана",
+      "zagreb_index": "Индекс Загреба",
+      "randic_index": "Индекс Рандича"
+    },
+    "electronic": {
+      "dipole_moment": "Дипольный момент",
+      "polarizability": "Поляризуемость",
+      "electronegativity": "Электроотрицательность",
+      "ionization_potential": "Потенциал ионизации"
+    }
+  },
+  "molecular_fingerprints": {
+    "morgan_fingerprints": {
+      "description": "Отпечатки Моргана (ECFP)",
+      "radius": "2-3",
+      "bits": "1024-2048",
+      "usage": "Структурное сходство"
+    },
+    "maccs_keys": {
+      "description": "MACCS ключи",
+      "keys": 166,
+      "usage": "Функциональные группы"
+    },
+    "rdkit_fingerprints": {
+      "description": "RDKit отпечатки",
+      "bits": "2048",
+      "usage": "Общие структурные особенности"
+    },
+    "atompair_fingerprints": {
+      "description": "Атомные пары",
+      "usage": "Атомные окружения"
+    },
+    "torsion_fingerprints": {
+      "description": "Торсионные отпечатки",
+      "usage": "Конформационные особенности"
+    }
+  },
+  "graph_representations": {
+    "node_features": {
+      "atom_type": "Тип атома",
+      "formal_charge": "Формальный заряд",
+      "hybridization": "Гибридизация",
+      "aromaticity": "Ароматичность",
+      "degree": "Степень узла",
+      "chirality": "Хиральность"
+    },
+    "edge_features": {
+      "bond_type": "Тип связи",
+      "conjugation": "Сопряжение",
+      "ring_membership": "Принадлежность к кольцу",
+      "stereochemistry": "Стереохимия"
+    },
+    "graph_features": {
+      "molecular_weight": "Молекулярный вес",
+      "num_atoms": "Количество атомов",
+      "num_bonds": "Количество связей",
+      "num_rings": "Количество колец",
+      "diameter": "Диаметр графа"
+    }
+  },
+  "admet_properties": {
+    "absorption": {
+      "caco2": "Проницаемость Caco-2",
+      "hia": "Человеческая кишечная абсорбция",
+      "bioavailability": "Биодоступность"
+    },
+    "distribution": {
+      "vd": "Объем распределения",
+      "plasma_protein_binding": "Связывание с белками плазмы",
+      "tissue_distribution": "Распределение в тканях"
+    },
+    "metabolism": {
+      "cyp_inhibition": "Ингибирование CYP",
+      "cyp_induction": "Индукция CYP",
+      "metabolic_stability": "Метаболическая стабильность"
+    },
+    "excretion": {
+      "clearance": "Клиренс",
+      "half_life": "Период полувыведения",
+      "urinary_excretion": "Почечная экскреция"
+    },
+    "toxicity": {
+      "hepatotoxicity": "Гепатотоксичность",
+      "cardiotoxicity": "Кардиотоксичность",
+      "nephrotoxicity": "Нефротоксичность",
+      "mutagenicity": "Мутагенность",
+      "carcinogenicity": "Канцерогенность"
+    }
+  },
+  "molecular_datasets": {
+    "training_data": {
+      "size": "Variable (1000-10000 compounds)",
+      "features": "Molecular descriptors, fingerprints, graphs",
+      "targets": "Toxicity, activity, ADMET properties"
+    },
+    "validation_data": {
+      "size": "20% of training data",
+      "purpose": "Model validation and hyperparameter tuning"
+    },
+    "test_data": {
+      "size": "20% of training data", 
+      "purpose": "Final model evaluation"
+    },
+    "external_test": {
+      "size": "Independent dataset",
+      "purpose": "Generalization assessment"
+    }
+  },
+  "model_evaluation": {
+    "classification_metrics": {
+      "accuracy": "Общая точность",
+      "precision": "Точность",
+      "recall": "Полнота",
+      "f1_score": "F1-мера",
+      "auc_roc": "Площадь под ROC кривой",
+      "auc_pr": "Площадь под PR кривой"
+    },
+    "regression_metrics": {
+      "mse": "Среднеквадратичная ошибка",
+      "mae": "Средняя абсолютная ошибка",
+      "rmse": "Корень из среднеквадратичной ошибки",
+      "r2": "Коэффициент детерминации",
+      "pearson_r": "Корреляция Пирсона"
+    },
+    "specialized_metrics": {
+      "enrichment_factor": "Фактор обогащения",
+      "hit_rate": "Частота попаданий",
+      "specificity": "Специфичность",
+      "sensitivity": "Чувствительность"
+    }
+  }
+}

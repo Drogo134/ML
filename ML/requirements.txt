@@ -1,0 +1,64 @@
+# Core ML Libraries
+numpy==1.24.3
+pandas==2.0.3
+scikit-learn==1.3.0
+
+# Deep Learning
+tensorflow==2.13.0
+torch==2.0.1
+torch-geometric==2.3.1
+
+# Gradient Boosting
+xgboost==1.7.6
+lightgbm==4.0.0
+catboost==1.2.2
+
+# Optimization
+optuna==3.3.0
+
+# Visualization
+matplotlib==3.7.2
+seaborn==0.12.2
+plotly==5.15.0
+
+# Model Interpretation
+shap==0.42.1
+lime==0.2.0.1
+
+# Data Processing
+feature-engine==1.6.2
+imbalanced-learn==0.11.0
+mlxtend==0.22.0
+
+# Chemistry and Molecular
+rdkit==2023.3.2
+deepchem==2.7.1
+mordred==1.2.0
+molsets==0.1.0
+chembl-webresource-client==0.10.8
+pubchempy==1.0.4
+moleculekit==1.6.6
+
+# Graph Neural Networks
+dgl==1.1.1
+torch-scatter==2.1.0
+torch-sparse==0.6.17
+torch-cluster==1.6.1
+torch-spline-conv==1.2.2
+
+# Visualization and Analysis
+yellowbrick==1.5
+
+# AI API Integration
+openai==1.3.0
+anthropic==0.7.0
+google-generativeai==0.3.0
+huggingface-hub==0.17.3
+cohere==4.37.0
+replicate==0.22.0
+stability-sdk==0.8.0
+
+# Utilities
+requests==2.31.0
+joblib==1.3.2
+tqdm==4.65.0

@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  ml-api:
+    build: .
+    container_name: ml-projects-api
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./human_behavior_prediction/data:/app/human_behavior_prediction/data
+      - ./human_behavior_prediction/models:/app/human_behavior_prediction/models
+      - ./human_behavior_prediction/results:/app/human_behavior_prediction/results
+      - ./biochemistry_molecules/data:/app/biochemistry_molecules/data
+      - ./biochemistry_molecules/models:/app/biochemistry_molecules/models
+      - ./biochemistry_molecules/results:/app/biochemistry_molecules/results
+      - ./small_ml_project/data:/app/small_ml_project/data
+      - ./small_ml_project/models:/app/small_ml_project/models
+      - ./small_ml_project/results:/app/small_ml_project/results
+    environment:
+      - PYTHONPATH=/app
+      - ML_PROJECTS_HOME=/app
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:alpine
+    container_name: ml-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - ml-api
+    restart: unless-stopped
